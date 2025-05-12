@@ -1,0 +1,35 @@
+{
+  "name": "@blueprint/blueprint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clinical Assessment Monorepo",
+  "author": "Franky Martinez <FrankyMartz@gmail.com>",
+  "homepage": "https://github.com/FrankyMartz/blueprint#readme",
+  "bugs": {
+    "url": "https://github.com/FrankyMartz/blueprint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankyMartz/blueprint.git"
+  },
+  "volta": {
+    "node": "24.0.0",
+    "npm": "11.3.0"
+  },
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "npm run build:server && npm run build:web",
+    "build:server": "npm run build --workspace=apps/server",
+    "build:web": "npm run build --workspace=apps/web",
+    "test": "npm run test:server && npm run test:web",
+    "test:server": "npm run test --workspace=apps/server",
+    "test:web": "npm run test --workspace=apps/web",
+    "test:watch": "npm run test:watch --workspace=apps/web",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

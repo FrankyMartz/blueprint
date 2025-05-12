@@ -1,0 +1,14 @@
+{
+  "name": "@blueprint/web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clinical Assessment Monorepo: Web",
+  "author": "Franky Martinez <FrankyMartz@gmail.com>",
+  "homepage": "https://github.com/FrankyMartz/blueprint/apps/web#readme",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {}
+}
