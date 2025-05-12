@@ -18,7 +18,8 @@
   },
   "scripts": {
     "start": "docker-compose up",
-    "build": "npm run build:server && npm run build:web",
+    "build": "npm run build:shared && npm run build:server && npm run build:web",
+    "build:shared": "npm run build --workspace=packages/shared",
     "build:server": "npm run build --workspace=apps/server",
     "build:web": "npm run build --workspace=apps/web",
     "test": "npm run test:server && npm run test:web",
@@ -26,6 +27,8 @@
     "test:web": "npm run test --workspace=apps/web",
     "test:watch": "npm run test:watch --workspace=apps/web",
     "lint": "npm run lint --workspaces",
+    "lint:shared": "npm run lint --workspace=packages/shared",
+    "lint:server": "npm run lint --workspace=apps/server",
     "format": "npm run format --workspaces"
   },
   "workspaces": [

@@ -1,8 +1,5 @@
+"use strict";
 /* ========================================================================== *
- * SHARED MODULE
- *
- * Utilities, Types, and Constants shared across the applications.
+ * SHARED: Types
  * ========================================================================== */
-
-export * from "./types";
-export * from "./constants";
+Object.defineProperty(exports, "__esModule", { value: true });
