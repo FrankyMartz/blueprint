@@ -4,10 +4,10 @@ import * as assessmentQuestions from './assessmentQuestions.schema';
 import * as assessmentAnswers from './assessmentAnswers.schema';
 
 export const schema = {
-	...assessments,
-	...assessmentSections,
-	...assessmentQuestions,
-	...assessmentAnswers,
+  ...assessments,
+  ...assessmentSections,
+  ...assessmentQuestions,
+  ...assessmentAnswers,
 };
 
 export type Schema = typeof schema;

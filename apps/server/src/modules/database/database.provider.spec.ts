@@ -7,18 +7,18 @@ import { DatabaseProvider, DatabaseProviderName } from './database.provider';
 type DatabaseProviderType = typeof DatabaseProvider;
 
 describe('DatabaseProvider', () => {
-	let provider: DatabaseProviderType;
+  let provider: DatabaseProviderType;
 
-	beforeEach(async () => {
-		const module: TestingModule = await Test.createTestingModule({
-			imports: [ConfigModule],
-			providers: [DatabaseService, DatabaseProvider],
-		}).compile();
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      imports: [ConfigModule],
+      providers: [DatabaseService, DatabaseProvider],
+    }).compile();
 
-		provider = module.get<DatabaseProviderType>(DatabaseProviderName);
-	});
+    provider = module.get<DatabaseProviderType>(DatabaseProviderName);
+  });
 
-	it('should be defined', () => {
-		expect(provider).toBeDefined();
-	});
+  it('should be defined', () => {
+    expect(provider).toBeDefined();
+  });
 });

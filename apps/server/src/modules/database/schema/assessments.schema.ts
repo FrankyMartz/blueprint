@@ -14,3 +14,7 @@ export const assessments = pgTable('assessments', {
 export const assessmentsRelations = relations(assessments, ({ many }) => ({
   sections: many(assessmentSections),
 }));
+
+export type Assessments = typeof assessments;
+export type AssessmentsInput = Assessments['$inferInsert'];
+export type AssessmentsValue = Assessments['$inferSelect'];
