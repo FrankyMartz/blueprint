@@ -3,8 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DatabaseModule } from './modules/database';
-import { AssessmentsModule } from './modules/assessments/assessments.module';
+import { DatabaseModule } from '../database';
+import { AssessmentsModule } from '../assessments/assessments.module';
 
 @Module({
 	imports: [
