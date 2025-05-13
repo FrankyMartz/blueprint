@@ -4,12 +4,15 @@ configDotenv({
 });
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
+import helmet from 'helmet';
+
 import { AppModule } from './modules/app';
-import { createAppOptions } from './utils/server.utils';
+import { createAppOptions } from './utils';
 
 async function bootstrap() {
   const appOptions = await createAppOptions();
   const app = await NestFactory.create(AppModule, appOptions);
+  app.use(helmet());
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
