@@ -23,7 +23,7 @@ async function readAppHttpsOptions(
     ]);
     return { key, cert } as NonNullable<NestApplicationOptions['httpsOptions']>;
   } catch (error) {
-    const message = error instanceof Error ? error.message : error;
+    const message = (error instanceof Error ? error.message : error) as string;
     console.error('>>> Unable to get HTTPS options:', message);
     return;
   }
@@ -40,7 +40,7 @@ export async function createAppOptions(): Promise<NestApplicationOptions> {
       if (httpsOptions) appOptions.httpsOptions = httpsOptions;
     }
   } catch (error) {
-    const message = error instanceof Error ? error.message : error;
+    const message = (error instanceof Error ? error.message : error) as string;
     console.error('>>> Error creating Application Options:', message);
   }
   return appOptions;

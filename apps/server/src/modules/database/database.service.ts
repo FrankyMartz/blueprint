@@ -30,7 +30,7 @@ export class DatabaseService implements OnApplicationShutdown {
     return this._client;
   }
 
-  async onApplicationShutdown(signal?: string) {
+  async onApplicationShutdown() {
     return await this._pool.end();
   }
 }

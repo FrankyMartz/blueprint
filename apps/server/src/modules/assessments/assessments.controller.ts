@@ -1,6 +1,4 @@
-import {
-  PaginationQueryDto,
-} from './types';
+import { PaginationQueryDto, AssessmentRequestPostPayloadDto } from './types';
 
 import {
   Controller,
@@ -9,6 +7,7 @@ import {
   ParseIntPipe,
   Post,
   Query,
+  Body,
 } from '@nestjs/common';
 import { AssessmentsService } from './assessments.service';
 
@@ -22,9 +21,8 @@ export class AssessmentsController {
   }
 
   @Post('/')
-  check() {
-    // This method is not implemented yet
-    return { message: 'This endpoint is not implemented yet' };
+  check(@Body() payload: AssessmentRequestPostPayloadDto) {
+    return this.assessmentsService.check(payload);
   }
 
   @Get(':assessmentId')

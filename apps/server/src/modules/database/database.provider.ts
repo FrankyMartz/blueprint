@@ -7,7 +7,7 @@ export const DatabaseProviderName = 'DatabaseProvider';
 export const DatabaseProvider: Provider = {
   provide: DatabaseProviderName,
   inject: [DatabaseService],
-  async useFactory(databaseService: DatabaseService) {
+  useFactory(databaseService: DatabaseService) {
     return databaseService.client;
   },
 };

@@ -3,50 +3,53 @@
  * ========================================================================== */
 
 import type {
-  AssessmentAnswersValue,
-  AssessmentQuestionsValue,
-  AssessmentSectionsValue,
-  AssessmentsValue,
+	AssessmentAnswersValue,
+	AssessmentQuestionsValue,
+	AssessmentSectionsValue,
+	AssessmentsValue,
 } from '@app/modules/database';
-
-type foo = AssessmentsValue;
+import type { AssessmentLevelTwoValue } from '@blueprint/shared';
 
 export interface PaginatedResponse<T> {
-  data: T[];
-  meta: {
-    total: number;
-    offset: number;
-    limit: number;
-  };
+	data: T[];
+	meta: {
+		total: number;
+		offset: number;
+		limit: number;
+	};
 }
 
-export type AssessmentListResponse = AssessmentsValue;
+export type AssessmentResponse = AssessmentsValue;
 
-export interface AssessmentResponse {
-  id: AssessmentsValue['id'];
-  name: AssessmentsValue['name'];
-  disorder: AssessmentsValue['disorder'];
-  content?: {
-    sections: AssessmentSectionResponse[];
-    displayName: AssessmentsValue['displayName'];
-  };
-  fullName: AssessmentsValue['fullName'];
+export interface AssessmentDetailResponse {
+	id: AssessmentsValue['id'];
+	name: AssessmentsValue['name'];
+	disorder: AssessmentsValue['disorder'];
+	content?: {
+		sections: AssessmentSectionResponse[];
+		displayName: AssessmentsValue['displayName'];
+	};
+	fullName: AssessmentsValue['fullName'];
 }
 
 export interface AssessmentSectionResponse {
-  id: AssessmentSectionsValue['id'];
-  type: AssessmentSectionsValue['type'];
-  title: AssessmentSectionsValue['title'];
-  questions: QuestionResponse[];
-  answers: AnswerResponse[];
+	id: AssessmentSectionsValue['id'];
+	type: AssessmentSectionsValue['type'];
+	title: AssessmentSectionsValue['title'];
+	questions: QuestionResponse[];
+	answers: AnswerResponse[];
 }
 
 export interface QuestionResponse {
-  id: AssessmentQuestionsValue['id'];
-  title: AssessmentQuestionsValue['title'];
+	id: AssessmentQuestionsValue['id'];
+	title: AssessmentQuestionsValue['title'];
 }
 
 export interface AnswerResponse {
-  title: AssessmentAnswersValue['title'];
-  value: AssessmentAnswersValue['value'];
+	title: AssessmentAnswersValue['title'];
+	value: AssessmentAnswersValue['value'];
+}
+
+export interface AssessmentCheckResponse {
+	results: AssessmentLevelTwoValue[];
 }
