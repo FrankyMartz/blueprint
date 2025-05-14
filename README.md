@@ -30,7 +30,7 @@ Clinical Assessment App
 2. Run the applications
    ```sh
    # Start API server (in terminal 2)
-   npm run start:prod
+   npm run start:server
    
    # Start web application (in terminal 3)
    npm run start:web
