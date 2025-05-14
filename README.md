@@ -11,6 +11,10 @@ Clinical Assessment App
 1. Setup environment
    ```sh
    # From project root
+   
+   # Rename `.env.sample` to `.env`
+   mv .env.sample .env
+   
    # Install dependencies
    npm install
    
