@@ -143,7 +143,7 @@ function Home() {
 								<Button
 									onClick={handleSubmit}
 									disabled={submitting}
-									className="px-8 py-2"
+									className="px-8 py-2  active:bg-stone-600/30 hover:bg-stone-600/10 cursor-pointer"
 									variant="outline"
 								>
 									{submitting ? 'Submitting...' : 'Submit'}

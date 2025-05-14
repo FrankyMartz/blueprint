@@ -1,6 +1,6 @@
 import { configDotenv } from 'dotenv';
 configDotenv({
-  path: process.env.NODE_ENV === 'production' ? '../.env' : '../../../.env',
+  path: '../../.env'
 });
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';

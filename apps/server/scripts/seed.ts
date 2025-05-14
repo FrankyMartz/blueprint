@@ -1,3 +1,7 @@
+import { configDotenv } from "dotenv";
+configDotenv({
+	path: '../../.env',
+});
 import { ConfigService } from '@nestjs/config';
 import { Pool } from 'pg';
 import { drizzle } from 'drizzle-orm/node-postgres';

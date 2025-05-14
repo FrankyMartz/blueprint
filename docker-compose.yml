@@ -9,6 +9,7 @@ services:
       - "5432:5432"
     expose:
       - 5432
+    tty: true
     networks:
       - default
     container_name: blueprint-postgres
@@ -22,7 +23,7 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-  api:
+  server:
     build:
       context: .
       dockerfile: ./apps/server/Dockerfile
@@ -35,6 +36,8 @@ services:
     tty: true
     environment:
       - NODE_ENV=production
+      - POSTGRES_HOST=database
+      - POSTGRES_PORT=5432
     networks:
       - default
     container_name: blueprint-server
@@ -57,7 +60,7 @@ services:
       - default
     container_name: blueprint-web
     depends_on:
-      - api
+      - server
 
 networks:
   default:

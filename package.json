@@ -18,7 +18,11 @@
   },
   "scripts": {
     "start": "docker-compose up",
-    "seed": "npm run seed --workspace=@blueprint/server",
+    "start:server": "npm run start:prod --workspace=@blueprint/server",
+    "start:web": "npm run preview --workspace=@blueprint/web",
+    "db": "npm run db:push && npm run db:seed",
+    "db:push": "npm run dk:push --workspace=@blueprint/server",
+    "db:seed": "npm run seed --workspace=@blueprint/server",
     "build": "npm run build:shared && npm run build:server && npm run build:web",
     "build:shared": "npm run build --workspace=@blueprint/shared",
     "build:server": "npm run build --workspace=@blueprint/server",
