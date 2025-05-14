@@ -43,6 +43,21 @@ services:
     volumes:
       - /apps/server
       - /apps/node_modules
+  web:
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    ports:
+      - "80:80"
+    mem_limit: 512m
+    mem_reservation: 64m
+    expose:
+      - 80
+    networks:
+      - default
+    container_name: blueprint-web
+    depends_on:
+      - api
 
 networks:
   default:
